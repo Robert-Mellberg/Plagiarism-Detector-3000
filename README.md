@@ -17,7 +17,7 @@ When running a script MATLAB will generate a workspace where all your variables 
 
 ## Performance
 
-Since there will be a lot of programs executed and each one compared with one another, it is probably interesting to reason about the execution time. If there are N progrmas (and N workspaces) and K variables in each workspace, then there will be N files executions, N^2 workspace comparisons, K^2 variable comparisons for each workspace comparison and N^2\*K^2 variable comparisons total. This will result in a execution time of T = A\*N^2+B\*N^2\*K^2, where A and B are two constants.
+Since there will be a lot of programs executed and each one compared with one another, it is probably interesting to reason about the execution time. If there are N programs (and N workspaces) and K variables in each workspace, then there will be N files executions, N^2 workspace comparisons, K^2 variable comparisons for each workspace comparison and N^2\*K^2 variable comparisons total. This will result in a execution time of T = A\*N+B\*N^2\*K^2, where A and B are two constants.
 
 A time measurement with 365 programs showed that the file executions took 300 seconds while the comparisons took 30 seconds, which implies that the linear term will dominate for reasonable amount of programs. It will take 3650 programs before the nonlinear term will dominate. This of course is dependent on the complexity of the files and the size of their workspaces.
 
